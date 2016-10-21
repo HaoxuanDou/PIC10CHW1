@@ -87,7 +87,6 @@ class Player {
       
    private:
       int money;
-      Hand hand;
       // You decide what extra fields (if any) you'll need...
 };
 

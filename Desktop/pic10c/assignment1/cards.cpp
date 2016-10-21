@@ -220,7 +220,18 @@ Player::Player(int m){
 }
 
 int Player::makeBet(int bet){
-	money -= bet;
+	if(money > bet){
+		money -= bet;
+		return bet;
+	}else{
+		bet = money;
+		money =0;
+		return bet;
+	}
+}
+
+void Player::win(int bet){
+	money += bet*2;
 }
 
 
