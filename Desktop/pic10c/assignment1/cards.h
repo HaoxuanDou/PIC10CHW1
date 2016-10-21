@@ -46,7 +46,7 @@ class Card {
       // Converts card rank to number.
       // The possible returns are: 1, 2, 3, 4, 5, 6, 7, 10, 11 and 12
       int get_rank() const;
-
+      double getValue() const;
       // Compare rank of two cards. E.g: Eight<Jack is true.
       // Assume Ace is always 1. 
       // Useful if you want to sort the cards.
@@ -62,7 +62,10 @@ class Hand {
    public:
       // A vector of Cards
       Hand();
-
+      
+      void takeCard(Card newCard);
+      double total() const;
+      bool operator < (Hand hand2) const;
       // You decide what functions you'll need...
 
    private:
