@@ -79,11 +79,15 @@ class Player {
       // Constructor. 
       //    Assigns initial amount of money
       Player(int m);
-
+      int makeBet(int bet);
+      void win(int bet);
       // You decide what functions you'll need...
-
+      
+      
+      
    private:
       int money;
+      Hand hand;
       // You decide what extra fields (if any) you'll need...
 };
 
