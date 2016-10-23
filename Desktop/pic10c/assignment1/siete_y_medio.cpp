@@ -11,54 +11,51 @@ using namespace std;
 
 
 // Non member functions declarations (if any)
-void oneRound(Player& player, Hand& playerhand, Hand& dealerHand, int& currentBet){
+void oneRound(Player& player, Hand& playerHand, Hand& dealerHand, int& currentBet){
 	string wannaBet;
 	cout << "You have $" << player.getMoney() << ". Enter bet: ";
     cin >> currentBet;
     currentBet = player.makeBet(currentBet);
-    playerHand.takeCard(new Card);
+    playerHand.takeCard(Card());
     cout << "Your cards: " << endl;
     playerHand.printCards();
     
     cout << "Your total is " << playerHand.total() <<". Do you want another card (y/n)? ";
     cin >> wannaBet;
-    if(wannaBet == "y"){ 
-        while(wannaBet == "y" && playerHand.total() <= 7.5){
-    		playerHand.takeCard(new Card);
-    		playerHand.takeCard(new Card);
+    while(wannaBet == "y" && playerHand.total() <= 7.5){
+    		playerHand.takeCard(Card());
     		cout << "New Cards: " << endl;
-    		playerHand.takeCard(new Card);
     		playerHand.getNew().printNewCard();
     		cout << endl;
     		cout << "Your cards: "<<endl;
     	    playerHand.printCards();
-    		cout << "Your total is " << playerHand.total << ". Do you want another card (y/n)? ";
+    		cout << "Your total is " << playerHand.total() << ". Do you want another card (y/n)? ";
     	    cin >> wannaBet;
-    	}
-    }else{
-    	dealerHand.takeCard(new Card);
-    	cout << "Dealer's cards: "<<endl;
-    	dealerHand.printCards();
-    	cout << "The dealer's total is " << dealerHand.total << "." <<endl;
-    	cout << endl;
-    	while(dealHand.total() < 5.5){
-    		dealerHand.takeCard(new Card);
-    		cout << "New Cards: " << endl;
-    		dealerHand.takeCard(new Card);
-    		dealerHand.getNew().printNewCard();
-    		cout << endl;
-    		cout << "Dealer's cards: "<<endl;
-    	    dealerHand.printCards();
-    		cout << "The dealer's total is " << dealerHand.total << "." <<endl;
-    	    cout << endl;
-    	}
+    }
+    dealerHand.takeCard(Card());
+    cout << "Dealer's cards: "<<endl;
+    dealerHand.printCards();
+    cout << "The dealer's total is " << dealerHand.total() << "." <<endl;
+    cout << endl;
+    while(dealerHand.total() < 5.5){
+        dealerHand.takeCard(Card());
+        cout << "New Cards: " << endl;
+        dealerHand.getNew().printNewCard();
+        cout << endl;
+        cout << "Dealer's cards: "<<endl;
+        dealerHand.printCards();
+        cout << "The dealer's total is " << dealerHand.total() << "." <<endl;
+        cout << endl;
     }
     
-    if(playerHand > dealerHand || dealerHand > 7.5){
-        player.win(currentBet)
+    if(dealerHand < playerHand && playerHand.total() <= 7.5){
+        player.win(currentBet);
+        cout << "You win " << currentBet << "." <<endl << endl;
+    }else if(dealerHand.total() > 7.5 && playerHand.total() <= 7.5){
+        player.win(currentBet);
         cout << "You win " << currentBet << "." <<endl << endl;
     }else{
-    	cout << "Too bad. You lose " << currentBet << "." <<endl << endl;
+    	cout << "Too bad. You lose $" << currentBet << "." <<endl << endl;
     }
 }
 
@@ -76,18 +73,21 @@ int main(){
    int count = 0;
    while(player.getMoney() > 0){
    		count++;
-   		oneRound(player,playerhand,dealerHand,currentBet);
+   		oneRound(player,playerHand,dealerHand,currentBet);
    		fout << "-----------------------------------------------" << endl;
-   		fout << "Game number: " << count << "		Money left: $" << player.getMoney() << end;
+   		fout << "Game number: " << count << "		Money left: $" << player.getMoney() << endl;
    		fout << "Bet: " << currentBet << endl << endl;
    		fout << "Your cards:" << endl;
    		playerHand.printCardsfile(fout);
-   		fout << "Your total: " << player.total() << "." << endl;
+   		fout << "Your total: " << playerHand.total() << "." << endl;
    		fout << endl << "Dealer's cards: "<<endl;
    		dealerHand.printCardsfile(fout);
-   		fout << "Dealer's total is " << player.total() << "." << endl << endl;
+   		fout << "Dealer's total is " << playerHand.total() << "." << endl << endl;
+        playerHand.zero();
+        dealerHand.zero();
    }
-   
+    cout << "You have $0. GAME OVER!" << endl <<"Come back when you have more money." << endl <<endl <<"Bye!" << endl;
+    fout.close();
    
    
    

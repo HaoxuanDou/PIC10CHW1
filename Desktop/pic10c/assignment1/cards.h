@@ -73,6 +73,7 @@ class Hand {
       double total() const;
       void printCards() const;
       bool operator < (Hand hand2) const;
+      void zero();
       // You decide what functions you'll need...
 
    private:
@@ -86,7 +87,7 @@ class Player {
       // Constructor. 
       //    Assigns initial amount of money
       Player(int m);
-      int getMoney();
+      int getMoney() const;
       int makeBet(int bet);
       void win(int bet);
       void printCards() const;

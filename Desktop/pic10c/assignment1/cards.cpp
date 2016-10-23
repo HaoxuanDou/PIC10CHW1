@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
+#include <ctime>
 /* 
 You might or might not need these two extra libraries 
 
@@ -19,7 +20,9 @@ You might or might not need these two extra libraries
    Most variations of Blackjack are played with 
    several decks of cards at the same time.
 */
+
 Card::Card(){
+   srand(time(0));
    int r = 1 + rand() % 4;
    switch (r) {
       case 1: suit = OROS; break;
@@ -106,14 +109,14 @@ string Card::get_spanish_rank() const {
 }
 
 string Card::getEnglishCard() const{
-	return get_english_rank() + " of " get_english_suit();
+    return get_english_rank() + " of " + get_english_suit();
 }
 string Card::getSpanishCard() const{
-	return get_spanish_rank() + " of " get_spanish_suit();
+	return get_spanish_rank() + " of " + get_spanish_suit();
 }
 void Card::printCard() const{
 	std::cout << "        ";
-	std::cout << std::setw(21) << getSpanishCard();
+    std::cout <<std::left<< std::setw(21) << getSpanishCard();
 	std::cout << "(" << getEnglishCard() << ")." << std::endl; 
 }
 void Card::printNewCard() const{
@@ -124,7 +127,7 @@ void Card::printNewCard() const{
 
 void Card::printCardfile(ofstream& fout) const{
 	fout << "        ";
-	fout << std::setw(21) << getSpanishCard();
+	fout <<std::left<< std::setw(21) << getSpanishCard();
 	fout << "(" << getEnglishCard() << ")." << std::endl; 
 }
 void Card::printNewCardfile(ofstream& fout) const{
@@ -220,6 +223,10 @@ bool Card::operator < (Card card2) const {
    Hand class
    ************************************************* */
 // Implemente the member functions of the Hand class here.
+Hand::Hand(){
+    vector<Card> hand;
+}
+
 
 void Hand::takeCard(Card newCard){
 	hand.push_back(newCard);
@@ -231,7 +238,7 @@ void Hand::printCardsfile(ofstream& fout) const{
 	}
 }
 
-void Hand::printCards(){
+void Hand::printCards() const{
 	for(int i=0;i< hand.size();i++){
 		hand[i].printCard();
 	}
@@ -250,6 +257,9 @@ Card Hand::getNew() const {
 bool Hand::operator < (Hand hand2) const{
 	return total() < hand2.total();
 }
+void Hand::zero(){
+    hand.clear();
+}
 
 /* *************************************************
    Player class
@@ -259,7 +269,7 @@ bool Hand::operator < (Hand hand2) const{
 Player::Player(int m){
 	money = m;
 }
-int Player::getMoney{return money;}
+int Player::getMoney() const {return money;}
 
 int Player::makeBet(int bet){
 	if(money > bet){
