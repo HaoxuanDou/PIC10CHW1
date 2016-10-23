@@ -122,6 +122,18 @@ void Card::printNewCard() const{
 	std::cout << "(" << getEnglishCard() << ")." << std::endl; 
 }
 
+void Card::printCardfile(ofstream& fout) const{
+	fout << "        ";
+	fout << std::setw(21) << getSpanishCard();
+	fout << "(" << getEnglishCard() << ")." << std::endl; 
+}
+void Card::printNewCardfile(ofstream& fout) const{
+	fout << "        ";
+	fout << getSpanishCard() << " ";
+	fout << "(" << getEnglishCard() << ")." << std::endl; 
+}
+
+
 // Accessor: returns a string with the suit of the card in English 
 // This is just a stub! Modify it to your liking.
 string Card::get_english_suit() const { 
@@ -211,6 +223,12 @@ bool Card::operator < (Card card2) const {
 
 void Hand::takeCard(Card newCard){
 	hand.push_back(newCard);
+}
+
+void Hand::printCardsfile(ofstream& fout) const{
+    for(int i=0;i< hand.size();i++){
+		hand[i].printCardfile(fout);
+	}
 }
 
 void Hand::printCards(){

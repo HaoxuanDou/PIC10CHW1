@@ -38,6 +38,8 @@ class Card {
 	  string getSpanishCard() const;
 	  void printCard() const;
 	  void printNewCard() const;
+	  void printCardfile(ofstream& fout) const;
+	  void printNewCardfile(ofstream& fout) const;
       /* 
          These are the only functions you'll need to code 
          for this class. See the implementations of the two 
@@ -67,6 +69,7 @@ class Hand {
       Hand();
       Card getNew() const;
       void takeCard(Card newCard);
+      void printCardsfile(ofstream& fout) const;
       double total() const;
       void printCards() const;
       bool operator < (Hand hand2) const;

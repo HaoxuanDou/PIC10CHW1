@@ -11,8 +11,7 @@ using namespace std;
 
 
 // Non member functions declarations (if any)
-void oneRound(Player& player, Hand& playerhand, Hand& dealerHand, ofstream& fout){
-	int currentBet;
+void oneRound(Player& player, Hand& playerhand, Hand& dealerHand, int& currentBet){
 	string wannaBet;
 	cout << "You have $" << player.getMoney() << ". Enter bet: ";
     cin >> currentBet;
@@ -73,7 +72,21 @@ int main(){
    Hand dealerHand;
    ofstream fout;
    fout.open("log.txt");
-   
+   int currentBet;
+   int count = 0;
+   while(player.getMoney() > 0){
+   		count++;
+   		oneRound(player,playerhand,dealerHand,currentBet);
+   		fout << "-----------------------------------------------" << endl;
+   		fout << "Game number: " << count << "		Money left: $" << player.getMoney() << end;
+   		fout << "Bet: " << currentBet << endl << endl;
+   		fout << "Your cards:" << endl;
+   		playerHand.printCardsfile(fout);
+   		fout << "Your total: " << player.total() << "." << endl;
+   		fout << endl << "Dealer's cards: "<<endl;
+   		dealerHand.printCardsfile(fout);
+   		fout << "Dealer's total is " << player.total() << "." << endl << endl;
+   }
    
    
    
