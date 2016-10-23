@@ -29,5 +29,5 @@
 	Three class: Card class representing each card and storing the rank and value of the cards, and Player class representing the player and storing the money of the player, and the Hand class representing the hands of the dealer and player.
 </p>
 <p>
-	To play, just download the source code and compile. The simulation will also generate a log file recording the game process, with the player starting with 100 dollars. The actual log file is in this repo named &quot;log.txt&quot;.
+	To play, just download the source code and compile. The simulation will also generate a log file recording the game process, with the player starting with 100 dollars. The actual sample run and corresponding log file is in this repo named &quot;log.txt&quot; and &quot;sample run.txt&quot;.
 </p>
