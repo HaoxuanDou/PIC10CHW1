@@ -1,11 +1,11 @@
 #include "cards.h"
 #include <cstdlib>
 #include <iostream>
-
-/* 
-You might or might not need these two extra libraries 
 #include <iomanip>
 #include <algorithm>
+/* 
+You might or might not need these two extra libraries 
+
 */
 
 
@@ -105,7 +105,22 @@ string Card::get_spanish_rank() const {
    return rankName;
 }
 
-
+string Card::getEnglishCard() const{
+	return get_english_rank() + " of " get_english_suit();
+}
+string Card::getSpanishCard() const{
+	return get_spanish_rank() + " of " get_spanish_suit();
+}
+void Card::printCard() const{
+	std::cout << "        ";
+	std::cout << std::setw(21) << getSpanishCard();
+	std::cout << "(" << getEnglishCard() << ")." << std::endl; 
+}
+void Card::printNewCard() const{
+	std::cout << "        ";
+	std::cout << getSpanishCard() << " ";
+	std::cout << "(" << getEnglishCard() << ")." << std::endl; 
+}
 
 // Accessor: returns a string with the suit of the card in English 
 // This is just a stub! Modify it to your liking.
@@ -198,6 +213,12 @@ void Hand::takeCard(Card newCard){
 	hand.push_back(newCard);
 }
 
+void Hand::printCards(){
+	for(int i=0;i< hand.size();i++){
+		hand[i].printCard();
+	}
+}
+
 double Hand::total() const{
 	double tot = 0;
 	for(size_t i=0; i<hand.size(); i++){
@@ -218,6 +239,7 @@ bool Hand::operator < (Hand hand2) const{
 Player::Player(int m){
 	money = m;
 }
+int Player::getMoney{return money;}
 
 int Player::makeBet(int bet){
 	if(money > bet){

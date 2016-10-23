@@ -34,7 +34,10 @@ class Card {
       // Accessors 
       string get_spanish_suit() const;
       string get_spanish_rank() const; 
-
+	  string getEnglishCard() const;
+	  string getSpanishCard() const;
+	  void printCard() const;
+	  void printNewCard() const;
       /* 
          These are the only functions you'll need to code 
          for this class. See the implementations of the two 
@@ -65,6 +68,7 @@ class Hand {
       
       void takeCard(Card newCard);
       double total() const;
+      void printCards() const;
       bool operator < (Hand hand2) const;
       // You decide what functions you'll need...
 
@@ -79,8 +83,10 @@ class Player {
       // Constructor. 
       //    Assigns initial amount of money
       Player(int m);
+      int getMoney();
       int makeBet(int bet);
       void win(int bet);
+      void printCards() const;
       // You decide what functions you'll need...
       
       
