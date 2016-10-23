@@ -1,0 +1,33 @@
+-----------------------------------------------
+Game number: 1		Money left: $1
+Bet: 99
+
+Your cards:
+        Dos of copas         (Two of cups).
+        Tres of bastos       (Three of clubs).
+Your total: 5.
+
+Dealer's cards: 
+        Dos of espadas       (Two of swords).
+        Dos of espadas       (Two of swords).
+        Dos of espadas       (Two of swords).
+Dealer's total is 5.
+
+-----------------------------------------------
+Game number: 2		Money left: $0
+Bet: 1
+
+Your cards:
+        Caballo of bastos    (Knight of clubs).
+        Rey of copas         (King of cups).
+        Caballo of oros      (Knight of golds).
+        Sota of bastos       (Jack of clubs).
+        Sota of bastos       (Jack of clubs).
+        Siete of espadas     (Seven of swords).
+Your total: 9.5.
+
+Dealer's cards: 
+        Cuatro of bastos     (Four of clubs).
+        Cuatro of bastos     (Four of clubs).
+Dealer's total is 9.5.
+
