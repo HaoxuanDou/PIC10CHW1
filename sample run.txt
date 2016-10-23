@@ -1,0 +1,102 @@
+You have $100. Enter bet: 99
+Your cards: 
+        Dos of copas         (Two of cups).
+Your total is 2. Do you want another card (y/n)? y
+New Cards: 
+        Tres of bastos (Three of clubs).
+
+Your cards: 
+        Dos of copas         (Two of cups).
+        Tres of bastos       (Three of clubs).
+Your total is 5. Do you want another card (y/n)? n
+Dealer's cards: 
+        Dos of espadas       (Two of swords).
+The dealer's total is 2.
+
+New Cards: 
+        Dos of espadas (Two of swords).
+
+Dealer's cards: 
+        Dos of espadas       (Two of swords).
+        Dos of espadas       (Two of swords).
+The dealer's total is 4.
+
+New Cards: 
+        Dos of espadas (Two of swords).
+
+Dealer's cards: 
+        Dos of espadas       (Two of swords).
+        Dos of espadas       (Two of swords).
+        Dos of espadas       (Two of swords).
+The dealer's total is 6.
+
+Too bad. You lose $99.
+
+You have $1. Enter bet: 1
+Your cards: 
+        Caballo of bastos    (Knight of clubs).
+Your total is 0.5. Do you want another card (y/n)? y
+New Cards: 
+        Rey of copas (King of cups).
+
+Your cards: 
+        Caballo of bastos    (Knight of clubs).
+        Rey of copas         (King of cups).
+Your total is 1. Do you want another card (y/n)? y
+New Cards: 
+        Caballo of oros (Knight of golds).
+
+Your cards: 
+        Caballo of bastos    (Knight of clubs).
+        Rey of copas         (King of cups).
+        Caballo of oros      (Knight of golds).
+Your total is 1.5. Do you want another card (y/n)? y
+New Cards: 
+        Sota of bastos (Jack of clubs).
+
+Your cards: 
+        Caballo of bastos    (Knight of clubs).
+        Rey of copas         (King of cups).
+        Caballo of oros      (Knight of golds).
+        Sota of bastos       (Jack of clubs).
+Your total is 2. Do you want another card (y/n)? y
+New Cards: 
+        Sota of bastos (Jack of clubs).
+
+Your cards: 
+        Caballo of bastos    (Knight of clubs).
+        Rey of copas         (King of cups).
+        Caballo of oros      (Knight of golds).
+        Sota of bastos       (Jack of clubs).
+        Sota of bastos       (Jack of clubs).
+Your total is 2.5. Do you want another card (y/n)? y
+New Cards: 
+        Siete of espadas (Seven of swords).
+
+Your cards: 
+        Caballo of bastos    (Knight of clubs).
+        Rey of copas         (King of cups).
+        Caballo of oros      (Knight of golds).
+        Sota of bastos       (Jack of clubs).
+        Sota of bastos       (Jack of clubs).
+        Siete of espadas     (Seven of swords).
+Your total is 9.5. Do you want another card (y/n)? n
+Dealer's cards: 
+        Cuatro of bastos     (Four of clubs).
+The dealer's total is 4.
+
+New Cards: 
+        Cuatro of bastos (Four of clubs).
+
+Dealer's cards: 
+        Cuatro of bastos     (Four of clubs).
+        Cuatro of bastos     (Four of clubs).
+The dealer's total is 8.
+
+Too bad. You lose $1.
+
+You have $0. GAME OVER!
+Come back when you have more money.
+
+Bye!
+Program ended with exit code: 0
