@@ -226,7 +226,9 @@ double Hand::total() const{
 	}
 	return tot;
 }
-
+Card Hand::getNew() const {
+    return hand[hand.size()-1];
+}
 bool Hand::operator < (Hand hand2) const{
 	return total() < hand2.total();
 }

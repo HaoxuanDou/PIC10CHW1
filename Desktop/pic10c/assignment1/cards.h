@@ -65,7 +65,7 @@ class Hand {
    public:
       // A vector of Cards
       Hand();
-      
+      Card getNew() const;
       void takeCard(Card newCard);
       double total() const;
       void printCards() const;
